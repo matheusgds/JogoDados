@@ -43,36 +43,47 @@ $valor2 = (int) $dado1p + (int) $dado2p;
         <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
     </head>
     <body>
-        <div name = "divprincipal2" id="divprincipal2">
-            <div name="divjogador" id="divjogador">
-                <h1> PESSOA </h1>
-                <div>
-                    <img src=<?php echo returnURLIMG($dado1p); ?> >
-
-                    <img style="margin-left:10px"src=<?php echo returnURLIMG($dado2p); ?> >
-                </div>
-                <div>
-                    <p> <?php echo $dado1p; ?></p>
-                    <p><?php echo $dado2p; ?></p>
-                </div>
-
-            </div>
-
-            <div name="divcomputador" id="divcomputador">
-                <h1>COMPUTADOR</h1>>
-                 <div>
-                    <img src=<?php echo returnURLIMG($dado1c); ?> >
-
-                    <img style="margin-left:10px"src=<?php echo returnURLIMG($dado2c); ?> >
-                </div>
-                <div>
-                    <p> <?php echo $dado1c; ?></p>
-                    <p><?php echo $dado2c; ?></p>
-                </div>
-
-            </div>
-
-
+        <div>
+            <h2> <?php
+                if ($valor1 == $valor2):
+                    echo "Empate";
+                elseif ($valor1 > $valor2):
+                    echo "Computador Ganhou!";
+                elseif ($valor1 < $valor2):
+                    echo "Pessoa Jogadora Ganhou!";
+                endif;
+                ?>
+            </h2>
         </div>
+
+        <div name="divjogador" id="divjogador">
+            <h1> PESSOA </h1>
+            <div>
+                <img style="margin-left:10px" src=<?php echo returnURLIMG($dado1p); ?> >
+                <h2 name ="h2dado1p" id="h2dado1p"> <?php echo $dado1p; ?></h2>
+
+                <img style="margin-left:10px" src=<?php echo returnURLIMG($dado2p); ?> >
+                <h2 name ="h2dado2p" id="h2dado2p"><?php echo $dado2p; ?></h2>
+                <br><br>
+                <h2 name ="h2dado2p" id="h2dado2p"><?php echo $dado1p; ?>+<?php echo $dado2p; ?> = <?php echo $valor2; ?></h2>
+
+            </div>
+        </div>
+        <div name="divcomputador" id="divcomputador">
+            <h1> COMPUTADOR </h1>
+            <div>
+                <img style="margin-left:10px" src=<?php echo returnURLIMG($dado1c); ?> >
+                <h2 name ="h2dado1c" id="h2dado1c"> <?php echo $dado1c; ?></h2>
+
+                <img style="margin-left:10px" src=<?php echo returnURLIMG($dado2c); ?> >
+                <h2 name ="h2dado2c" id="h2dado2c"><?php echo $dado2c; ?> </h2>
+                <br><br>
+                <h2 name ="h2dado1c" id="h2dado1c"> <?php echo $dado1c; ?>+<?php echo $dado2c; ?> = <?php echo $valor1; ?></h2>
+
+            </div>
+        </div>
+
+
+
     </body>
 </html>
